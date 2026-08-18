@@ -1,0 +1,17 @@
+patient_name = input("Enter patient name: ")
+heart_rate = int(input("Enter heart rate: "))
+temperature = float(input("Enter temperature (°F): "))
+
+print("\n--- Patient Health Check ---")
+print("Patient:", patient_name)
+print("Heart Rate:", heart_rate)
+print("Temperature:", temperature)
+
+if heart_rate < 60 or heart_rate > 100:
+    print("ALERT: Abnormal heart rate!")
+
+if temperature > 100.4:
+    print("ALERT: High temperature!")
+
+if 60 <= heart_rate <= 100 and temperature <= 100.4:
+    print("Patient status: NORMAL")

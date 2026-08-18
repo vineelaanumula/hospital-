@@ -1,0 +1,26 @@
+log_file = "hospital.log"
+
+errors = 0
+warnings = 0
+normal = 0
+
+try:
+    with open(log_file, "r") as file:
+        for line in file:
+            if "ERROR" in line:
+                errors += 1
+            elif "WARNING" in line:
+                warnings += 1
+            elif "INFO" in line:
+                normal += 1
+
+    print("\n--- Hospital Log Report ---")
+    print("Normal events:", normal)
+    print("Warnings:", warnings)
+    print("Errors:", errors)
+
+    if errors > 0:
+        print("ALERT: Hospital system has errors!")
+
+except FileNotFoundError:
+    print("hospital.log file not found.")
